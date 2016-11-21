@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {width: 300px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+            }
+        ul{
+            width: 500px;
+            position: absolute;
+            left: -100px;
+
+        }
+        li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li style="background: red">3</li>
+            <li style="background: green">1</li>
+            <li style="background: blue">2</li>
+            <li style="background: red">3</li>
+            <li style="background: green">1</li>
+        </ul>
+    </div>
+    <script>
+        var ul = document.getElementsByTagName('ul')[0];
+        var li = ul.getElementsByTagName('li');
+        /*console.log(li);*/
+        var nowindex = 0;
+        var time = setInterval(move,1000)
+        function move(){
+            nowindex ++;
+            if(nowindex < li.length - 2){
+                console.log(nowindex);
+                ul.style.left = -(nowindex ) * 100 + 'px';
+
+
+            }
+            if( nowindex == li.length - 2){
+                nowindex = 0
+                ul.style.left = 0
+            }
+            /*console.log(nowindex)*/
+        }
+    </script>
+</body>
+</html>
